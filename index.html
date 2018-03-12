@@ -98,6 +98,33 @@
 					<h2 class="search-title">Заинтересовались?</h2>
 					<p class="search-text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
 					<button type="button">Поиск гостиницы в Седоне</button>
+					
+					<!-- Нужно ли форму оборачивать в див? -->
+					<form action="https://echo.htmlacademy.ru" method="get" class="searching-form">
+						<div class="form-full-width">
+							<label for="checkin">Дата заезда: </label>
+							<input type="date" name="checkin" id="checkin" placeholder="24 апреля 2017">
+							<img src="img/calendar.svg" alt="calendar icon">
+						</div>
+						
+						<div class="form-full-width">
+							<label for="checkout">Дата выезда: </label>
+							<input type="date" name="checkout" id="checkout" placeholder="4 июля 2017">
+							<img src="img/calendar.svg" alt="calendar icon">
+						</div>
+						
+						<div class="form-half-width">
+							<label for="adults">Взрослые:</label>
+							<input type="number" min="1" step="1" id="adults" name="adults" value="2">
+						</div>
+						
+						<div class="form-half-width">
+							<label for="children">Дети:</label>
+							<input type="number" min="0" step="1" id="children" name="adults" value="0">
+						</div>
+						
+						<button type="submit" class="button search-button">Найти</button>
+					</form>
 				</div>
 				
 				<!-- Map -->

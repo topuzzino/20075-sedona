@@ -25,8 +25,30 @@
 		
 		<main class="container">
 			<section class="hotel-filters">
-				<!-- Form will be added here -->
-				<form></form>
+				<!-- Filtering form -->
+				<form action="#" method="get" class="filtering-form">
+					<fieldset class="hotel-extras">
+						<legend>Инфраструктура:</legend>
+						<li class="filtering-extras"><label><input type="checkbox" name="pool" checked>Бассейн</label></li>
+						<li class="filtering-extras"><label><input type="checkbox" name="parking">Парковка</label></li>
+						<li class="filtering-extras"><label><input type="checkbox" name="wi-fi">Wi-Fi</label></li>
+					</fieldset>
+					
+					<fieldset class="hotel-type">
+						<legend>Тип жилья:</legend>
+						<li class="filtering-types"><label><input type="checkbox" name="hotel" checked>Гостиница</label></li>
+						<li class="filtering-types"><label><input type="checkbox" name="motel" checked>Мотель</label></li>
+						<li class="filtering-types"><label><input type="checkbox" name="appartement" checked>Апартаменты</label></li>
+					</fieldset>
+					
+					<fieldset class="hotel-price">
+						<legend>Стоимость в сутки (Р):</legend>
+						<output class="min-price" name="min-price">От 0</output>
+						<output class="max-price" name="max-price">До 3000</output>
+						<input type="range" min="0" max="3500" value="3000">
+						<button type="submit" class="button filtering-button">Показать</button>
+					</fieldset>
+				</form>
 			</section>
 			
 			<!-- Results of filter searching -->
