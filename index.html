@@ -102,27 +102,26 @@
 					<p class="search-text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
 					<button type="button">Поиск гостиницы в Седоне</button>
 					
-					<!-- Нужно ли форму оборачивать в див? -->
-					<form action="https://echo.htmlacademy.ru" method="get" class="searching-form">
-						<!-- Vielleicht umbenennen -->
-						<div class="form-full-width">
+					<!-- Hotel searching form -->
+					<form action="https://echo.htmlacademy.ru" method="post" class="searching-form">
+						<div class="form-dates">
 							<label for="checkin">Дата заезда: </label>
 							<input type="text" name="checkin" id="checkin" placeholder="24 апреля 2017">
 							<img src="img/calendar.svg" alt="calendar icon">
 						</div>
 						
-						<div class="form-full-width">
+						<div class="form-dates">
 							<label for="checkout">Дата выезда: </label>
 							<input type="text" name="checkout" id="checkout" placeholder="4 июля 2017">
 							<img src="img/calendar.svg" alt="calendar icon">
 						</div>
 						
-						<div class="form-half-width">
+						<div class="form-traveller">
 							<label for="adults">Взрослые:</label>
 							<input type="number" min="1" step="1" id="adults" name="adults" value="2">
 						</div>
 						
-						<div class="form-half-width">
+						<div class="form-traveller">
 							<label for="children">Дети:</label>
 							<input type="number" min="0" step="1" id="children" name="adults" value="0">
 						</div>
@@ -132,8 +131,9 @@
 				</div>
 				
 				<!-- Map -->
-				<section class="search-map"><img src="img/map.jpg" width="1200" height="474" alt="Map of Sedona">
+				<section class="search-map">
 					<h2 class="visually-hidden">Карта Седоны</h2>
+					<img src="img/map.jpg" width="1200" height="474" alt="Map of Sedona">
 				</section>
 			</section>	    					    
 				    
