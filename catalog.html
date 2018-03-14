@@ -24,16 +24,62 @@
 		</header>
 		
 		<main class="container">
-			<section class="hotel-filters">
-				<!-- Form will be added here -->
-				<form></form>
-			</section>
+			<h1 class="visually-hidden">Отели в Седоне</h1>
+			<!-- Filtering form -->
+			<form action="https://echo.htmlacademy.ru" method="post" class="filtering-form">
+				<h2 class="visually-hidden">Настройка фильтра поиска</h2>
+				<fieldset class="hotel-extras">
+					<legend>Инфраструктура:</legend>
+					<ul>
+						<li class="filtering-extras">
+							<input type="checkbox" name="infrastructure" id="pool" value="pool" checked>
+							<label for="pool">Бассейн</label>
+						</li>
+						<li class="filtering-extras">
+							<input type="checkbox" name="infrastructure" id="parking" value="parking">
+							<label for="parking">Парковка</label>
+						</li>
+						<li class="filtering-extras">
+							<input type="checkbox" name="infrastructure" id="wi-fi" value="wi-fi">
+							<label for="wi-fi">Wi-Fi</label>
+						</li>
+					</ul>
+				</fieldset>
+				
+				<fieldset class="hotel-type">
+					<legend>Тип жилья:</legend>
+					<ul>
+						<li class="filtering-types">
+							<input type="checkbox" name="hotel-type" id="hotel" value="hotel" checked>
+							<label for="hotel">Гостиница</label>
+						</li>
+						<li class="filtering-types">
+							<input type="checkbox" name="hotel-type" id="motel" value="motel" checked>
+							<label for="motel">Мотель</label>
+						</li>
+						<li class="filtering-types">
+							<input type="checkbox" name="hotel-type" id="appartement" value="appartement" checked>
+							<label for="appartement">Апартаменты</label>
+						</li>
+					</ul>
+				</fieldset>
+				
+				<fieldset class="hotel-price">
+					<legend>Стоимость в сутки (Р):</legend>
+					<output class="min-price" name="min-price">От 0</output>
+					<output class="max-price" name="max-price">До 3000</output>
+					<input type="range" min="0" max="3500" value="3000">
+				</fieldset>
+				<button type="submit" class="button filtering-button">Показать</button>
+			</form>
+			
 			
 			<!-- Results of filter searching -->
 			<section class="hotels">
-				
+				<h2 class="visually-hidden">Результаты поиска</h2>	
 				<!-- Searching info -->
 				<section class="hotel-results-info">
+					<h3 class="visually-hidden">Список отелей</h3>
 					<div class="hotels-founded">
 						<p>Найдено: <span class="hotels-founded-count">3</span></p>
 					</div>
@@ -106,8 +152,6 @@
 						</li>
 					</ul>
 				</section>
-				
-				
 			</section>
 			
 		</main>
