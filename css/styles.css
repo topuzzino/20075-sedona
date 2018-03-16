@@ -1,0 +1,312 @@
+body {
+	margin: 0;
+	padding: 0;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #f2f2f2;
+	
+	font-family: "PT Sans", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+	color: #333333;
+	text-transform: uppercase;
+}
+
+/** Контейнер, в котором все **/
+.main-wrapper {
+	background-color: white;
+}
+a {
+	text-decoration: none;
+}
+.main-nav {
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000000;
+	background-color: #ffffff;
+}
+.main-nav,
+.main-nav-list {
+	list-style: none;
+}
+.main-nav a,
+.main-nav-list a {
+	color: #000000;
+}
+/*  Обязательно ли тут указывать и .main-nav и .main-nav-list  */
+.main-nav a:hover,
+.main-nav a:focus,
+.main-nav-list a:hover,
+.main-nav-list a:focus {
+	color: #81b3d2;
+}
+.main-nav a:active,
+.main-nav-list a:active {
+	color: #cacaca;
+}
+
+.other-reasons-list,
+.features-list,
+.social-media {
+	list-style: none;
+}
+.visually-hidden {
+	display: none;
+}
+
+.intro-text {
+	text-align: center;
+}
+.intro-text h2 {
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: bold;
+	color: #000000;
+}
+.reason-info {
+	text-align: center;
+	background-color: #81b3d2;
+	color: #ffffff;
+}
+.reason-title,
+.other-reasons-item {
+	font-size: 21px;
+	line-height: 21px;
+	font-weight: bold;
+}
+.reason-info p,
+.other-reasons-item p {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+}
+.other-reasons {
+	background-color: #eeeeee;
+}
+.other-reasons-item,
+.search-title,
+.search-text {
+	text-align: center;
+	color: #000000;
+}
+.searching-form input {
+	border: none;
+	color: #000000;
+}
+.searching-form input:focus {
+	background-color: #ffffff;
+	border: 2px solid #e5e5e5;
+}
+.button {
+	text-align: center;
+	color: #ffffff;
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: bold;
+	text-transform: uppercase;
+	vertical-align: middle;
+	border: none;
+}
+
+/* Button for hotel searching form */
+.popup-button {
+	background-color: #766357;	
+}
+.popup-button:hover,
+.popup-button:focus {
+	background-color: #604e43;	
+}
+.popup-button:active {
+	background-color: #503e33;
+	color: #8f8681;	
+}
+/* Button for submitting the form */
+.search-button {
+	background-color: #81b3d2;
+}
+.search-button:hover,
+.search-button:focus {
+	background-color: #669ec0;
+}
+.search-button:active {
+	background-color: #5496bd;
+	color: #94b9d2;
+}
+
+/* Hotel searching form */
+.form-dates,
+.form-traveller {
+	font-size: 14px;
+	line-height: 26px;
+	color: #000000;
+	font-weight: 700;
+}
+.form-dates input {
+	background-color: #f2f2f2;
+}
+/* Почему цвет шрифта не перенимает? должен быть черным, а он серый */
+.form-dates input[type="text"],
+.form-dates input[type="number"] {
+	font:inherit;
+	text-transform: uppercase;
+	color: #000000;
+}
+.form-dates input:hover,
+.form-dates input:focus {
+	background-color: #ebebeb;
+}
+.form-dates input:active {
+	background-color: #ffffff;
+	border: 2px solid e5e5e5;
+}
+/* Calendar pictogramm in the form */
+/* Чего-то я не понимаю, надо же наверно оборачивать картинку в ссылку? или в кнопку? иначе какой ховер, фокус и актив у картинки? */
+.form-dates img {
+	background-color: #cacaca;
+}
+.form-dates img:hover,
+.form-dates img:focus {	
+	background-color: #000000;
+}
+.form-dates img:active {
+	background-color: #85b5d3;
+}
+/* И как стилизовать плюсы-минусы в инпут[номерах]? */
+
+/* Footer */
+.main-footer {
+	background-color:rgba(254, 254, 254, 0.9);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 26px;
+	color: #000000;
+}
+.footer-hashtag a {
+	color: #000000;
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: bold;
+}
+
+/* А почему их теперь в макете не видно? у них же заданы ширина, высота и цвет, должны квадратиками показываться */
+.social-media a {
+	background-color: #81b3d2;
+	width: 46px;
+	height: 48px;
+}
+.social-media a:hover,
+.social-media a:focus {
+	background-color: #669ec0;
+}
+.social-media a:active {
+	background-color: #5496bd;
+	color: #88b6d1;
+}
+/* После того, как записала стили, подумалось, что изменение цвета в логотипе - это же по сути три разных свг-файла, нет?  */
+.footer-author a:hover,
+.footer-author a:focus {
+	background-color: #81b3d2;
+}
+.footer-author a:active {
+	background-color: #bdbbbc;
+}
+
+/* Styles for catalog.html */
+
+/* Styles for the form */
+.filtering-form {
+	font-size: 14px;
+	line-height: 21px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: normal;
+	background-image: url("img/header-image-hotel.jpg");
+}
+.filtering-form ul {
+	list-style: none;
+}
+/* Form headlines */
+.filtering-form legend {
+	font-size: 16px;
+	line-height: 21px;
+	font-weight: bold;
+}
+.filtering-form fieldset {
+	border: none;
+}
+.filtering-form .filtering-button {
+	font: inherit;
+	background-color: transparent;
+	border: 1px solid #ffffff;
+}
+/* Сделала обертку для обоих аутпутов, не знаю, правильно ли это. Они все-тки в одном блоке визуальном */
+.output-wrapper {
+	border: 1px solid #ffffff;
+}
+/* А как стилизовать регулятор цены? я в сети нашла какие-то описания на несколько томов, там кода на 50 страниц А4 */
+.hotel-price input[type="range"] {	
+}
+
+.hotels-founded {
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: bold;
+}
+.hotel-sort-list,
+.hotel-sort-updown-list {
+	list-style: none;
+}
+.hotel-sort {
+	font-size: 12px;
+	line-height: 18px;
+	text-transform: uppercase;
+	font-weight: normal;
+} 
+.hotel-sort-title {
+	color: #000000;
+}
+/* Почему стили для линии под текстом в ссылке не применяются? Линия остается серой и не пунктирной */
+.hotel-sort-link {
+	color: #cacaca;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-color: #81b3d2;
+}
+.hotel-sort-link:hover,
+.hotel-sort-link:focus {
+	color: #81b3d2;
+}
+.hotel-sort-link:active {
+	color: #81b3d2;
+	text-decoration: none;
+}
+
+/* Hotel list */
+.hotel-list {
+	list-style: none;
+}
+/* Почему-то не применяется черный цвет, текст заголовка остался синим */
+.hotel-item-title {
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000000;
+}
+.hotel-type {
+	font-size: 14px;
+	line-height: 21px;
+}
+.hotel-item-link-more {
+	background-color: #81b3d2;
+	color: #ffffff;
+	vertical-align: middle;
+}
+.hotel-item-link-book {
+	background-color: #766357;
+	color: #ffffff;
+	vertical-align: middle;
+}

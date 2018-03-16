@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Гостиницы Седоны</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet"> 
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
   </head>
   
   <body>
@@ -66,8 +69,10 @@
 				
 				<fieldset class="hotel-price">
 					<legend>Стоимость в сутки (Р):</legend>
-					<output class="min-price" name="min-price">От 0</output>
-					<output class="max-price" name="max-price">До 3000</output>
+					<div class="output-wrapper">
+						<output class="min-price" name="min-price">От 0</output>
+						<output class="max-price" name="max-price">До 3000</output>
+					</div>
 					<input type="range" min="0" max="3500" value="3000">
 				</fieldset>
 				<button type="submit" class="button filtering-button">Показать</button>
