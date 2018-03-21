@@ -20,6 +20,7 @@
 			  	<ul class="main-nav-list">
 				  	<li class="main-nav-item"><a href="info.html">Информация</a></li>
 				  	<li class="main-nav-item"><a href="photo.html">Фото и видео</a></li>
+				  	<li class="main-nav-item"></a></li>
 				  	<li class="main-nav-item"><a href="map.html">Карта штата</a></li>
 				  	<li class="main-nav-item"><a href="catalog.html">Гостиницы</a></li>
 		  		</ul>
@@ -31,7 +32,7 @@
 		    <!-- Intro picture -->
 		    <div class="intro-background-pic"></div>
 		    <!-- Intro text -->
-		    <div class="intro-text">
+		    <div class="intro-info">
 			    <h1 class="visually-hidden">Город Седона</h1>
 			    <h2 class="intro-title">СЕДОНА — небольшой городок в Аризоне, заслуживающий большего!</h2>
 			    <p class="intro-text">Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
@@ -45,7 +46,7 @@
 				    <p class="reason-number">&ndash; &numero;1 &ndash;</p>
 				    <p class="reason-text">Седона — не аттракцион для туристов, там течет своя жизнь</p>
 			    </div>
-			    <div class="reason-pic"><img src="img/ad-picture01.jpg" width="800" height="401" alt="City of Sedona"></div>
+			    <div class="reason-pic"><img src="img/ad-picture01a.jpg" width="800" height="256" alt="City of Sedona"></div>
 			</section>
 			
 			<!-- Section with features -->
@@ -53,15 +54,15 @@
 				<h2 class="visually-hidden">Что мы можем предложить</h2>
 				<ul class="features-list">
 					<li class="features-item">
-					    <h3 class="features-title">Жилье</h3>
+					    <h3 class="features-title feature-1">Жилье</h3>
 					    <p class="features-text">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
 					</li>
 					<li class="features-item">
-					    <h3 class="features-title">Еда</h3>
+					    <h3 class="features-title feature-2">Еда</h3>
 						<p class="features-text">Всегда заказывайте фирменный бургер, Вы не разочаруетесь!</p>
 					</li>
 					<li class="features-item">
-					    <h3 class="features-title">Сувениры</h3>
+					    <h3 class="features-title feature-3">Сувениры</h3>
 					    <p class="features-text">Не только китайского, но и местного производства!</p>
 					</li>
 				</ul>
@@ -69,7 +70,7 @@
 			
 			<!-- Section with second reason -->
 			<section class="reason">
-				<div class="reason-pic"><img src="img/ad-picture02.jpg" width="800" height="400" alt="Devil's Bridge"></div>
+				<div class="reason-pic"><img src="img/ad-picture02a.jpg" width="800" height="256" alt="Devil's Bridge"></div>
 				<div class="reason-info">
 					<h3 class="reason-title">Там есть Мост дьявола</h3>
 					<p class="reason-number">&ndash; &numero;2 &ndash;</p>
@@ -119,14 +120,16 @@
 							<img src="img/calendar.svg" alt="calendar icon">
 						</div>
 						
-						<div class="form-traveller">
-							<label for="adults">Взрослые:</label>
-							<input type="number" min="1" step="1" id="adults" name="adults" value="2">
-						</div>
-						
-						<div class="form-traveller">
-							<label for="children">Дети:</label>
-							<input type="number" min="0" step="1" id="children" name="adults" value="0">
+						<div class="form-wrapper">
+							<div class="form-traveller">
+								<label for="adults">Взрослые:</label>
+								<span class="form-amount form-minus">-</span><input type="number" min="1" step="1" id="adults" name="adults" value="2"><span class="form-amount form-plus">+</span>
+							</div>
+							
+							<div class="form-traveller">
+								<label for="children">Дети:</label>
+								<span class="form-amount form-minus">-</span><input type="number" min="0" step="1" id="children" name="adults" value="0"><span class="form-amount form-plus">+</span>
+							</div>
 						</div>
 						
 						<button type="submit" class="button search-button">Найти</button>
@@ -136,7 +139,11 @@
 				<!-- Map -->
 				<section class="search-map">
 					<h2 class="visually-hidden">Карта Седоны</h2>
-					<img src="img/map.jpg" width="1200" height="474" alt="Map of Sedona">
+					
+					<!-- как сделать так, чтобы футер наезжал на нижний кусок карты? 
+					футер имеет небольшую прозрачность, под ним видна карта. 
+					Отрицательный маргин подвинул только содержание футера, но его фон -->
+					<img src="img/map.jpg" width="1200" alt="Map of Sedona">
 				</section>
 			</section>	    					    
 				    
@@ -149,9 +156,25 @@
 			</div>
 			<div class="footer-social">
 				<ul class="social-media">
-					<li class="social-buttons"><a href="#" class="social-link visually-hidden">Twitter</a></li>
-					<li class="social-buttons"><a href="#" class="social-link visually-hidden">Facebook</a></li>
-					<li class="social-buttons"><a href="#" class="social-link visually-hidden">YouTube</a></li>
+					<li class="social-buttons">
+						<a href="#" class="social-link">
+							<span class="visually-hidden">Twitter</span>
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="15" viewBox="0 0 17 15"><path fill="#FFF" d="M10.95.144c1.685-.496 2.984.27 3.577 1.179.673-.231 1.331-.481 2.011-.708a2.345 2.345 0 0 1-.857 1.768c.685.17 1.304-.491 1.304-.491-.169 1-1.006 1.788-1.563 2.024-.231 6.75-3.175 11.217-10.077 11.082h-.446c-.41 0-4.164-.46-4.898-1.887 2.271.196 3.893-.422 4.693-1.177-.96-.3-2.679-.477-2.979-2.95.349.106.564.228 1.19.119C1.705 8.247.374 7.53.448 5.33c.285.328 1.067.536 1.34.472C1.085 5.561-.182 2.442.894.85c1.818 1.854 3.735 3.606 7.152 3.773C8.254 2.33 9.183.793 10.95.144z"/></svg>
+						</a>
+					</li>
+					<li class="social-buttons">
+						<a href="#" class="social-link">
+							<span class="visually-hidden">Facebook</span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22"><path fill="#FFF" d="M12 4V0H8a4 4 0 0 0-4 4v4H0v4h4v10h4V12h4V8H8V4h4z"/></svg>
+						</a>
+					</li>
+					<li class="social-buttons">
+						<a href="#" class="social-link">
+							<span class="visually-hidden">YouTube</span>
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><path fill="#FFF" d="M17 0H3C1.35 0 0 1.35 0 3v10c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM6.027 11.998V4.002L15.014 8l-8.987 3.998z"/></svg>
+
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="footer-author">

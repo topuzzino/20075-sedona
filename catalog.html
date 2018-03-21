@@ -14,14 +14,15 @@
 		<!-- Header -->
 	  	<header class="main-header">
 		  	<nav class="main-nav">
-			  	<a href="index.html" class="main-header-logo">
+			  	<a class="main-header-logo">
 				  	<img src="img/logo.png" width="137" height="70" alt="Logo of Sedona">
 				</a>
 			  	<ul class="main-nav-list">
 				  	<li class="main-nav-item"><a href="info.html">Информация</a></li>
 				  	<li class="main-nav-item"><a href="photo.html">Фото и видео</a></li>
+				  	<li class="main-nav-item"></a></li>
 				  	<li class="main-nav-item"><a href="map.html">Карта штата</a></li>
-				  	<li class="main-nav-item active"><a href="catalog.html">Гостиницы</a></li>
+				  	<li class="main-nav-item"><a href="catalog.html">Гостиницы</a></li>
 		  		</ul>
 		  	</nav>
 		</header>
@@ -67,15 +68,25 @@
 					</ul>
 				</fieldset>
 				
-				<fieldset class="hotel-price">
-					<legend>Стоимость в сутки (Р):</legend>
-					<div class="output-wrapper">
-						<output class="min-price" name="min-price">От 0</output>
-						<output class="max-price" name="max-price">До 3000</output>
-					</div>
-					<input type="range" min="0" max="3500" value="3000">
-				</fieldset>
-				<button type="submit" class="button filtering-button">Показать</button>
+				<div class="filter-range">
+					<fieldset class="hotel-price">
+						<legend class="filter-range-title">Стоимость в сутки (Р):</legend>
+						<div class="price-controls">
+							<label class="min-price">От <input type="text" name="min-price" value="0"></label>
+							<label class="max-price">До <input type="text" name="max-price" value="3000"></label>
+						</div>
+						<div class="range-controls">
+							<div class="scale">
+								<div class="bar"></div>
+								<!-- <input type="range" min="0" max="3500" value="3000"> -->
+							</div>
+							
+							<div class="range-toggle range-toggle-min"></div>
+							<div class="range-toggle range-toggle-max"></div>
+						</div>
+					</fieldset>
+					<button type="submit" class="button filtering-button">Показать</button>
+				</div>
 			</form>
 			
 			
@@ -84,7 +95,7 @@
 				<h2 class="visually-hidden">Результаты поиска</h2>	
 				<!-- Searching info -->
 				<section class="hotel-results-info">
-					<h3 class="visually-hidden">Список отелей</h3>
+					<h3 class="visually-hidden">Список отелей</h3> 
 					<div class="hotels-founded">
 						<p>Найдено: <span class="hotels-founded-count">3</span></p>
 					</div>
@@ -99,9 +110,16 @@
 					<div class="hotel-sort-updown">
 						<ul class="hotel-sort-updown-list">
 							<!-- По возрастанию -->
-							<li class="hotel-sort-updown-item"><a href="#" class="hotel-ascending-order"></a></li>
+							<li class="hotel-sort-updown-item">
+								<a href="#" class="hotel-ascending-order">
+									<svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 0L0 10h11z"/></svg>
+								</a>
+							</li>
 							<!-- По убыванию -->
-							<li class="hotel-sort-updown-item"><a href="#" class="hotel-descending-order"></a></li>
+							<li class="hotel-sort-updown-item">
+								<a href="#" class="hotel-descending-order"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/></svg>
+								</a>
+							</li>
 						</ul>
 					</div>
 				</section>
@@ -110,48 +128,58 @@
 					<ul class="hotel-list">
 						<li class="hotel-item">
 							<div class="hotel-pic"><img src="img/hotel-amara.jpg" width="135" height="90" alt="Hotel Amara"></div>
-							<div class="hotel-info">
-								<h3 class="hotel-item-title"><a href="#">Amara Resort &amp; Spa</a></h3>
-								<span class="hotel-type">Гостиница</span><span class="hotel-price">От 4000 р.</span>
+							
+							<div class="hotel-info-wrapper">
+								<div class="hotel-info">
+									<h3 class="hotel-item-title"><a href="#">Amara Resort &amp; Spa</a></h3>
+									<span class="hotel-type">Гостиница</span><span class="hotel-price">От 4000 р.</span>
+								</div>
+								<div class="hotel-item-links">
+									<a href="#" class="hotel-item-link-more">Подробнее</a>
+									<a href="#" class="hotel-item-link-book">Забронировать</a>
+								</div>	
 							</div>
-							<div class="hotel-item-links">
-								<a href="#" class="hotel-item-link-more">Подробнее</a>
-								<a href="#" class="hotel-item-link-book">Забронировать</a>
-							</div>	
+							
 							<div class="hotel-item-raiting">
-								<div class="raiting-stars"></div>
+								<div class="raiting-stars 4-stars"></div>
 								<span class="raiting">Рейтинг: 8,5</span>
 							</div>
 						</li>
 						
 						<li class="hotel-item">
 							<div class="hotel-pic"><img src="img/hotel-desert.jpg" width="135" height="90" alt="Hotel Desert Quail Inn"></div>
-							<div class="hotel-info">
-								<h3 class="hotel-item-title"><a href="#">Desert Quail Inn</a></h3>
-								<span class="hotel-type">Мотель</span><span class="hotel-price">От 3000 р.</span>
+							<div class="hotel-info-wrapper">
+								<div class="hotel-info">
+									<h3 class="hotel-item-title"><a href="#">Desert Quail Inn</a></h3>
+									<span class="hotel-type">Мотель</span><span class="hotel-price">От 3000 р.</span>
+								</div>
+								<div class="hotel-item-links">
+									<a href="#" class="hotel-item-link-more">Подробнее</a>
+									<a href="#" class="hotel-item-link-book">Забронировать</a>
+								</div>
 							</div>
-							<div class="hotel-item-links">
-								<a href="#" class="hotel-item-link-more">Подробнее</a>
-								<a href="#" class="hotel-item-link-book">Забронировать</a>
-							</div>
+							
 							<div class="hotel-item-raiting">
-								<div class="raiting-stars"></div>
+								<div class="raiting-stars 3-stars"></div>
 								<span class="raiting">Рейтинг: 8,9</span>
 							</div>	
 						</li>
 						
 						<li class="hotel-item">
 							<div class="hotel-pic"><img src="img/hotel-villas.jpg" width="135" height="90" alt="Villas at Poco Diablo"></div>
-							<div class="hotel-info">
-								<h3 class="hotel-item-title"><a href="#">Villas at Poco Diablo</a></h3>
-								<span class="hotel-type">Апартаменты</span><span class="hotel-price">От 2000 р.</span>
+							<div class="hotel-info-wrapper">
+								<div class="hotel-info">
+									<h3 class="hotel-item-title"><a href="#">Villas at Poco Diablo</a></h3>
+									<span class="hotel-type">Апартаменты</span><span class="hotel-price">От 2000 р.</span>
+								</div>
+								<div class="hotel-item-links">
+									<a href="#" class="hotel-item-link-more">Подробнее</a>
+									<a href="#" class="hotel-item-link-book">Забронировать</a>
+								</div>
 							</div>
-							<div class="hotel-item-links">
-								<a href="#" class="hotel-item-link-more">Подробнее</a>
-								<a href="#" class="hotel-item-link-book">Забронировать</a>
-							</div>
+							
 							<div class="hotel-item-raiting">
-								<div class="raiting-stars"></div>
+								<div class="raiting-stars 2-stars"></div>
 								<span class="raiting">Рейтинг: 9,2</span>
 							</div>
 						</li>
@@ -168,9 +196,25 @@
 			</div>
 			<div class="footer-social">
 				<ul class="social-media">
-					<li class="social-buttons"><a href="#" class="social-link visually-hidden">Twitter</a></li>
-					<li class="social-buttons"><a href="#" class="social-link visually-hidden">Facebook</a></li>
-					<li class="social-buttons"><a href="#" class="social-link visually-hidden">YouTube</a></li>
+					<li class="social-buttons">
+						<a href="#" class="social-link">
+							<span class="visually-hidden">Twitter</span>
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="15" viewBox="0 0 17 15"><path fill="#FFF" d="M10.95.144c1.685-.496 2.984.27 3.577 1.179.673-.231 1.331-.481 2.011-.708a2.345 2.345 0 0 1-.857 1.768c.685.17 1.304-.491 1.304-.491-.169 1-1.006 1.788-1.563 2.024-.231 6.75-3.175 11.217-10.077 11.082h-.446c-.41 0-4.164-.46-4.898-1.887 2.271.196 3.893-.422 4.693-1.177-.96-.3-2.679-.477-2.979-2.95.349.106.564.228 1.19.119C1.705 8.247.374 7.53.448 5.33c.285.328 1.067.536 1.34.472C1.085 5.561-.182 2.442.894.85c1.818 1.854 3.735 3.606 7.152 3.773C8.254 2.33 9.183.793 10.95.144z"/></svg>
+						</a>
+					</li>
+					<li class="social-buttons">
+						<a href="#" class="social-link">
+							<span class="visually-hidden">Facebook</span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22"><path fill="#FFF" d="M12 4V0H8a4 4 0 0 0-4 4v4H0v4h4v10h4V12h4V8H8V4h4z"/></svg>
+						</a>
+					</li>
+					<li class="social-buttons">
+						<a href="#" class="social-link">
+							<span class="visually-hidden">YouTube</span>
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><path fill="#FFF" d="M17 0H3C1.35 0 0 1.35 0 3v10c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM6.027 11.998V4.002L15.014 8l-8.987 3.998z"/></svg>
+
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="footer-author">

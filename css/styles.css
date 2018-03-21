@@ -1,8 +1,8 @@
 body {
 	margin: 0;
 	padding: 0;
-	padding-left: 40px;
-	padding-right: 40px;
+	max-width: 1280px;
+	min-width: 1200px;
 	background-color: #f2f2f2;
 	
 	font-family: "PT Sans", Arial, sans-serif;
@@ -13,13 +13,32 @@ body {
 	text-transform: uppercase;
 }
 
-/** Контейнер, в котором все **/
+.visually-hidden {
+	visibility: hidden;
+	position: absolute;
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+/* Container for everything */
+
 .main-wrapper {
-	background-color: white;
+	background-color: #ffffff;
+	width: 1200px;
+	margin: 0 auto;
 }
 a {
 	text-decoration: none;
 }
+
+ 
+/* Header */
+
+.main-header {
+	height: 56px;
+}
+
 .main-nav {
 	font-size: 14px;
 	line-height: 26px;
@@ -27,6 +46,8 @@ a {
 	text-transform: uppercase;
 	color: #000000;
 	background-color: #ffffff;
+	
+	position: relative; /* centers the logo */
 }
 .main-nav,
 .main-nav-list {
@@ -36,7 +57,33 @@ a {
 .main-nav-list a {
 	color: #000000;
 }
-/*  Обязательно ли тут указывать и .main-nav и .main-nav-list  */
+
+/* ul becomes flex container */
+.main-nav-list {
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	background-color: #ffffff;
+}
+.main-nav-item {
+	width: 20%;
+	height: 26px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+/* Logo is centered */
+.main-header-logo {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* Navigation links */
 .main-nav a:hover,
 .main-nav a:focus,
 .main-nav-list a:hover,
@@ -48,23 +95,161 @@ a {
 	color: #cacaca;
 }
 
+
+/* Styles for main */
+.container {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/* Styles for header image */
+.intro-background-pic {
+	background-image: url("../img/header-image-indexa.jpg");
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 564px;
+	background-color: #e4f1f9;
+}
+
+/* Styles for intro text */
+.intro-info {
+	background-color: #ffffff;
+	width: 100%;
+	padding-top: 62px;
+	
+	text-align: center;
+}
+.intro-title {
+	width: 500px;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: bold;
+	color: #000000;
+}
+.intro-text {
+	width: 500px;
+	margin: 0 auto;
+	margin-bottom: 56px;
+}
+
+
+/* Styles for the first reason */
+.reason {
+	width: 1200px;
+	height: 256px;
+	font-size: 0;   /* Иначе перед голубой плашкой возникает серый прямоугольник, 
+					который относится к скрытому visually-hidden h2 */
+	
+	display: flex;
+	text-align: center;
+}
+.reason-info {
+	width: 400px;
+	text-align: center;
+	height: 208px;    /* 256-48 */
+	padding-top: 48px;
+}
+.reason-info h3 {
+	width: 150px;
+	margin: 0 auto;
+	margin-bottom: 26px;
+}
+.reason-number {
+	width: 300px;
+	margin: 0 auto;
+	margin-bottom: 26px;
+}
+.reason-text {
+	width: 310px;
+	margin: 0 auto;
+}
+.reason-pic {
+	width: 800px;
+	height: 256px;
+}
+
+
+/* Styles for features */
+
+.features-list {
+	display: flex;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+.features-item {
+	width: 400px;
+	padding-top: 60px;
+	text-align: center;
+}
+
+.features-title {
+	position: relative;
+	margin: 0 auto;
+	padding-top: 102px;
+	margin-bottom: 24px;
+}
+.features-title::before {
+	content: "";
+	
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	
+	width: 75px;
+	height: 72px;
+	background-repeat: no-repeat;
+}
+.feature-1::before {
+	background-image: url("../img/icon-1.svg");
+}
+.feature-2::before {
+	background-image: url("../img/icon-3.svg");
+}
+.feature-3::before {
+	width: 64px;
+	height: 76px;
+	background-image: url("../img/icon-2.svg");
+}
+.features-text {
+	width: 295px;
+	margin: 0 auto;
+	margin-bottom: 84px;
+}
+
+/* Section for other reasons (Nr. 3–5) */
 .other-reasons-list,
 .features-list,
 .social-media {
 	list-style: none;
 }
-.visually-hidden {
-	display: none;
+
+.other-reasons {
+	background-color: #eeeeee;
+	padding-top: 48px;
 }
 
-.intro-text {
-	text-align: center;
+.other-reasons-list {
+	padding: 0;
+	margin: 0;
+	display: flex;
 }
-.intro-text h2 {
-	font-size: 21px;
-	line-height: 26px;
-	font-weight: bold;
-	color: #000000;
+.other-reasons-item {
+	width: 400px;
+}
+.other-reasons-title {
+	width: 130px;
+	margin: 0 auto;
+}
+.other-reasons-text {
+	width: 270px;
+	margin: 0 auto;
+	margin-bottom: 64px;
 }
 .reason-info {
 	text-align: center;
@@ -83,15 +268,54 @@ a {
 	line-height: 21px;
 	font-weight: 400;
 }
-.other-reasons {
-	background-color: #eeeeee;
-}
+
 .other-reasons-item,
 .search-title,
 .search-text {
 	text-align: center;
 	color: #000000;
 }
+
+.search {
+	padding-top: 54px;
+}
+.search-wrapper {
+	width: 572px;
+	margin: 0 auto;
+}
+.search-title {
+	margin-top: 0; 
+	margin-bottom: 28px;
+}
+.search-text {
+	width: 460px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+/* Popup button for hotel searching form */
+.popup-button {
+	background-color: #766357;
+	display: inline-block;
+	padding: 32px 139px;
+	width: 100%;
+}
+.popup-button:hover,
+.popup-button:focus {
+	background-color: #604e43;	
+}
+.popup-button:active {
+	background-color: #503e33;
+	color: #8f8681;	
+}
+
+/* Styles for searching form */
+.searching-form {
+	padding: 55px 56px;
+	position: absolute;
+	background-color: #ffffff;
+}
+
 .searching-form input {
 	border: none;
 	color: #000000;
@@ -111,21 +335,12 @@ a {
 	border: none;
 }
 
-/* Button for hotel searching form */
-.popup-button {
-	background-color: #766357;	
-}
-.popup-button:hover,
-.popup-button:focus {
-	background-color: #604e43;	
-}
-.popup-button:active {
-	background-color: #503e33;
-	color: #8f8681;	
-}
 /* Button for submitting the form */
 .search-button {
 	background-color: #81b3d2;
+	width: 460px;
+	margin: 0 auto;
+	padding: 16px 0;
 }
 .search-button:hover,
 .search-button:focus {
@@ -136,7 +351,6 @@ a {
 	color: #94b9d2;
 }
 
-/* Hotel searching form */
 .form-dates,
 .form-traveller {
 	font-size: 14px;
@@ -144,26 +358,55 @@ a {
 	color: #000000;
 	font-weight: 700;
 }
-.form-dates input {
-	background-color: #f2f2f2;
+.form-dates {
+	width: 458px;
+	margin: 0 auto;
+	position: relative;
 }
-/* Почему цвет шрифта не перенимает? должен быть черным, а он серый */
-.form-dates input[type="text"],
-.form-dates input[type="number"] {
+.form-traveller {
+	width: 226px;	
+}
+.form-dates input,
+.form-traveller input {
+	background-color: #f2f2f2;
 	font:inherit;
 	text-transform: uppercase;
 	color: #000000;
 }
+.form-dates input {
+	width: 346px;
+	height: 38px;
+}
+.form-dates input::after {
+	content: "";
+	
+}
+.form-traveller input {
+	width: 114px;
+	height: 38px;
+}
 .form-dates input:hover,
-.form-dates input:focus {
+.form-dates input:focus,
+.form-traveller input:hover,
+.form-traveller input:focus {
 	background-color: #ebebeb;
 }
-.form-dates input:active {
+.form-dates input:active,
+.form-traveller input:active {
 	background-color: #ffffff;
 	border: 2px solid e5e5e5;
 }
+
+.form-dates label {
+	width: 113px;
+}
+
+
+.form-wrapper {
+	display: flex;
+	margin-bottom: 54px;
+}
 /* Calendar pictogramm in the form */
-/* Чего-то я не понимаю, надо же наверно оборачивать картинку в ссылку? или в кнопку? иначе какой ховер, фокус и актив у картинки? */
 .form-dates img {
 	background-color: #cacaca;
 }
@@ -174,7 +417,10 @@ a {
 .form-dates img:active {
 	background-color: #85b5d3;
 }
-/* И как стилизовать плюсы-минусы в инпут[номерах]? */
+
+/* Map */
+
+
 
 /* Footer */
 .main-footer {
@@ -183,7 +429,27 @@ a {
 	font-weight: 400;
 	line-height: 26px;
 	color: #000000;
+	
+	padding: 36px 0;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
 }
+.footer-info,
+.footer-social,
+.footer-author {
+	width: 400px;
+	height: 48px;
+}
+
+.footer-info {
+	margin: 0 auto;
+}
+.footer-info p {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
 .footer-hashtag a {
 	color: #000000;
 	font-size: 21px;
@@ -191,21 +457,45 @@ a {
 	font-weight: bold;
 }
 
-/* А почему их теперь в макете не видно? у них же заданы ширина, высота и цвет, должны квадратиками показываться */
-.social-media a {
+.social-link {
 	background-color: #81b3d2;
 	width: 46px;
 	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center; 
 }
-.social-media a:hover,
-.social-media a:focus {
+
+.social-media {
+	display: flex;
+	width: 150px;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.social-link:hover,
+.social-link:focus {
 	background-color: #669ec0;
 }
-.social-media a:active {
+.social-link:active {
 	background-color: #5496bd;
 	color: #88b6d1;
 }
-/* После того, как записала стили, подумалось, что изменение цвета в логотипе - это же по сути три разных свг-файла, нет?  */
+.social-link:active path {
+	fill: #88b6d1;
+}
+
+.footer-author {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer-author-text {
+	margin: 0;
+	margin-right: 7px;
+}
+
 .footer-author a:hover,
 .footer-author a:focus {
 	background-color: #81b3d2;
@@ -214,61 +504,241 @@ a {
 	background-color: #bdbbbc;
 }
 
+
 /* Styles for catalog.html */
 
-/* Styles for the form */
+
+
+/* Styles for the form of catalog.html */
+
 .filtering-form {
 	font-size: 14px;
 	line-height: 21px;
 	color: #ffffff;
 	text-transform: uppercase;
 	font-weight: normal;
-	background-image: url("img/header-image-hotel.jpg");
+	background-image: url("../img/header-image-hotel.jpg");
+	padding: 30px 73px;
+	
+	display: flex;
+	flex-wrap: wrap;
 }
-.filtering-form ul {
-	list-style: none;
+/* 3 flex-elements of the form */
+.hotel-extras {
+	width: 240px;
+	text-align: left;
+	margin: 0;
+	padding: 0;
 }
-/* Form headlines */
-.filtering-form legend {
+.hotel-type {
+	width: 240px;
+	margin: 0;
+	padding: 0;
+}
+.filter-range {
+	width: 318px;
+	margin: 0;
+	padding: 0;
+	margin-left: auto;
+}
+
+.hotel-extras legend,
+.hotel-type legend {
+	margin-bottom: 9px;
 	font-size: 16px;
 	line-height: 21px;
 	font-weight: bold;
 }
+
+.filtering-form ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 .filtering-form fieldset {
 	border: none;
 }
-.filtering-form .filtering-button {
+
+
+
+.hotel-price {
+	margin: 0;
+	padding: 0;
+	
+}
+.filter-range-title {
+	margin-bottom: 9px;
+	font-size: 16px;
+	line-height: 21px;
+	font-weight: bold;
+}
+
+.price-controls {
+	border: 2px solid #ffffff;
+	height: 36px;
+	margin-bottom: 20px;
+	border-radius: 2px;
+	
+	font-size: 0;
+	position: relative;
+}
+
+.price-controls::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	width: 2px;
+	height: 22px;
+	
+	background: #ffffff;
+}
+
+.price-controls label {
+	display: inline-block;
+	
+	font-size: 14px;
+	line-height: 38px;
+	vertical-align: top;
+	
+	cursor: pointer;
+}
+
+.price-controls .min-price,
+.price-controls .max-price {
+	width: 90px;
+	padding-left: 65px;
+}
+
+.price-controls input {
+	width: 50px;
+	margin: 0;
+	
+	color: inherit;
+	font: inherit;
+	
+	background: none;
+	border: none;
+}
+
+
+.range-controls {
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.range-controls .scale {
+	height: 2px;
+	
+	background: rgba(255, 255, 255, 0.3)
+}
+
+.range-controls .bar {
+	width: 80%;
+	height: 2px;
+	
+	background: #ffffff;
+}
+
+.range-toggle {
+	width: 4px;
+	height: 4px;
+	
+	background: #ababab;
+	border: 8px solid #ffffff;
+	border-radius: 50%;
+	box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+	cursor: pointer;
+	
+	position: absolute;
+	top: -9px;
+}
+
+.range-toggle-min {
+	left: 0;
+}
+.range-toggle-max {
+	left: 80%;
+}
+
+.range-toggle:hover {
+	background: #1c4f80;
+}
+
+.filtering-button {
 	font: inherit;
 	background-color: transparent;
-	border: 1px solid #ffffff;
+	border: 2px solid #ffffff;
+	border-radius: 2px;
+	cursor: pointer;
+	
+	display: block;
+	padding: 6px 35px;
+	margin: 0 auto;
 }
-/* Сделала обертку для обоих аутпутов, не знаю, правильно ли это. Они все-тки в одном блоке визуальном */
-.output-wrapper {
-	border: 1px solid #ffffff;
+
+.filtering-button:hover {
+	color: #000000;
+	background-color: #ffffff;
 }
-/* А как стилизовать регулятор цены? я в сети нашла какие-то описания на несколько томов, там кода на 50 страниц А4 */
-.hotel-price input[type="range"] {	
+
+
+
+/* Styles for main of catalog.html */
+
+
+
+.hotel-results-info {
+	display: flex;
+	padding: 32px 73px;
+	min-height: 22px;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .hotels-founded {
 	font-size: 21px;
 	line-height: 26px;
 	font-weight: bold;
+	
+	width: 135px;
+	margin-right: 32px;
 }
-.hotel-sort-list,
-.hotel-sort-updown-list {
-	list-style: none;
+
+.hotels-founded p {
+	padding: 0;
+	margin: 0;
 }
+
 .hotel-sort {
 	font-size: 12px;
 	line-height: 18px;
 	text-transform: uppercase;
 	font-weight: normal;
-} 
+	
+	margin-right: 38px;
+}
+.hotel-sort-list {
+	display: flex;
+	width: 240px;
+	justify-content: space-between;
+}
+
+.hotel-sort-list,
+.hotel-sort-updown-list,
+.hotel-sort-updown {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 .hotel-sort-title {
 	color: #000000;
+	
+	display: inline-block;
 }
-/* Почему стили для линии под текстом в ссылке не применяются? Линия остается серой и не пунктирной */
 .hotel-sort-link {
 	color: #cacaca;
 	text-decoration: underline;
@@ -287,26 +757,109 @@ a {
 /* Hotel list */
 .hotel-list {
 	list-style: none;
+	margin: 0;
+	padding: 0;
 }
-/* Почему-то не применяется черный цвет, текст заголовка остался синим */
+.hotel-item {
+	display: flex;
+	border-bottom: 1px solid #e5e5e5;
+	min-height: 120px;
+	padding-top: 30px;
+}
+
+
+.hotel-pic {
+	width: 135px;
+	margin-right: 30px;
+	margin-left: 73px;
+	min-height: 90px;
+}
+.hotel-info {
+	text-align: left;
+}
+
 .hotel-item-title {
+	padding: 0;
+	margin: 0;
 	font-size: 21px;
 	line-height: 26px;
 	font-weight: bold;
 	text-transform: uppercase;
 	color: #000000;
 }
+.hotel-item-title a {
+	color: #000000;
+	
+	margin-bottom: 10px;
+}
 .hotel-type {
 	font-size: 14px;
 	line-height: 21px;
+	width: 110px;
+	margin-right: 6px;
+	margin-bottom: 10px;
+	
+	display: inline-block;
 }
+.hotel-price {
+	margin-bottom: 16px;
+}
+
+.hotel-item-links {
+	display: flex;
+	width: 258px;
+	justify-content: space-between;
+}
+
 .hotel-item-link-more {
 	background-color: #81b3d2;
 	color: #ffffff;
-	vertical-align: middle;
+	width: 110px;
+	text-align: center;
+	padding: 6px 0;
+	margin: 0 auto;
 }
+
 .hotel-item-link-book {
 	background-color: #766357;
 	color: #ffffff;
-	vertical-align: middle;
+	width: 142px;
+	text-align: center;
+	padding: 6px 0;
+	margin: 0 auto;
+}
+
+
+.hotel-item-raiting {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	
+	height: 90px;
+	margin-left: auto;
+	margin-right: 73px;
+}
+.raiting {
+	display: block;
+	width: 110px;
+	height: 27px;
+	
+	background-color: #f2f2f2;
+	text-align: center;
+}
+.raiting-stars {
+	height: 17px;
+	width: 90px;
+	background-color: red;
+	background: url("../img/star.svg") repeat-x;	
+}
+.4-stars {
+	width: 90px;
+}
+.3-stars {
+	width: 65px;
+}
+.2-stars {
+	width: 42px;
 }
