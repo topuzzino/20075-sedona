@@ -110,25 +110,29 @@
 					<form action="https://echo.htmlacademy.ru" method="post" class="searching-form">
 						<div class="form-dates">
 							<label for="checkin">Дата заезда: </label>
-							<input type="text" name="checkin" id="checkin" placeholder="24 апреля 2017">
-							<img src="img/calendar.svg" alt="calendar icon">
+							<input type="text" name="checkin" id="checkin" value="24 апреля 2017">
+							<button class="calendar-button" type="submit">
+								<img src="img/calendar.svg" alt="calendar">
+							</button>
 						</div>
 						
 						<div class="form-dates">
 							<label for="checkout">Дата выезда: </label>
-							<input type="text" name="checkout" id="checkout" placeholder="4 июля 2017">
-							<img src="img/calendar.svg" alt="calendar icon">
+							<input type="text" name="checkout" id="checkout" value="4 июля 2017">
+							<button class="calendar-button" type="submit">
+								<img src="img/calendar.svg" alt="calendar">
+							</button>
 						</div>
 						
 						<div class="form-wrapper">
-							<div class="form-traveller">
+							<div class="form-traveller adults">
 								<label for="adults">Взрослые:</label>
-								<span class="form-amount form-minus">-</span><input type="number" min="1" step="1" id="adults" name="adults" value="2"><span class="form-amount form-plus">+</span>
+								<input type="number" min="1" step="1" id="adults" name="adults" value="2">
 							</div>
 							
-							<div class="form-traveller">
+							<div class="form-traveller children">
 								<label for="children">Дети:</label>
-								<span class="form-amount form-minus">-</span><input type="number" min="0" step="1" id="children" name="adults" value="0"><span class="form-amount form-plus">+</span>
+								<input type="number" min="0" step="1" id="children" name="adults" value="0">
 							</div>
 						</div>
 						

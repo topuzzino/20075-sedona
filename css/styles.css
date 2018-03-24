@@ -32,6 +32,17 @@ a {
 	text-decoration: none;
 }
 
+.button {
+	text-align: center;
+	color: #ffffff;
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: bold;
+	text-transform: uppercase;
+	vertical-align: middle;
+	border: none;
+}
+
  
 /* Header */
 
@@ -280,7 +291,7 @@ a {
 	padding-top: 54px;
 }
 .search-wrapper {
-	width: 572px;
+	width: 568px;
 	margin: 0 auto;
 }
 .search-title {
@@ -309,33 +320,140 @@ a {
 	color: #8f8681;	
 }
 
-/* Styles for searching form */
+
+/* -----------------------  Styles for searching form */
 .searching-form {
 	padding: 55px 56px;
 	position: absolute;
 	background-color: #ffffff;
+	box-sizing: border-box;
+	width: 568px;
 }
 
-.searching-form input {
+.form-dates label,
+.form-traveller label {
+	color: #000000;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 26px;
+	text-transform: uppercase;
+	align-self: center;
+}
+
+.form-dates input,
+.form-traveller input {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 26px;
+	text-transform: uppercase;
+	color: #000000; 
+	background-color: #f2f2f2;
+	border: 2px solid #f2f2f2; /* чтобы в состоянии фокуса инпут не увеличивался на ширину обводки */
+	padding-left: 13px;
+}
+
+.form-dates input:hover,
+.form-traveller input:hover {
+	background-color: #ebebeb;
+	border: 2px solid #ebebeb;
+}
+
+.form-dates input:focus,
+.form-traveller input:focus {
+	background-color: #ffffff;
+	outline: none;
+}
+
+.form-dates .calendar-button {
+	color: #000000;
+	opacity: 0.3;
+	background-color: #ffffff;
 	border: none;
+}
+.form-dates .calendar-button:hover {
 	color: #000000;
 }
-.searching-form input:focus {
-	background-color: #ffffff;
-	border: 2px solid #e5e5e5;
-}
-.button {
-	text-align: center;
-	color: #ffffff;
-	font-size: 21px;
-	line-height: 26px;
-	font-weight: bold;
-	text-transform: uppercase;
-	vertical-align: middle;
+
+.form-dates .calendar-button:focus {
+	color: #81b3d2;
 	border: none;
 }
 
-/* Button for submitting the form */
+.calendar-button {
+	background-color: #f2f2f2;
+	width: 21px;
+	height: 22px;
+}
+
+.form-dates {
+	width: 460px;
+	margin: 0 auto;
+	position: relative;
+	padding-bottom: 29px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-dates input {
+	width: 346px;
+	height: 38px;
+}
+
+.form-dates label {
+	width: 113px;
+}
+
+.form-dates button {
+	position: absolute;
+	cursor: pointer;
+	background: none;
+	border: none;
+	top: 9px;
+	padding: 0;
+	right: 9px;
+}
+
+
+.form-wrapper {
+	display: flex;
+	margin-bottom: 54px;
+	width: 460px;
+	justify-content: space-between;
+}
+
+/*  .form-wrapper label::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 12px;
+	height: 3px;
+	background-color: #a9a9a9;
+	top: 18px;
+	left: 50px;
+}  */
+
+.form-traveller {
+	width: 227px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-traveller label {
+	width: 113px;
+	display: block;
+}
+
+.form-traveller input {
+	width: 99px;
+	height: 38px;
+}
+.children label {
+	padding-left: 50px;
+}
+
+
+
+/* -----------------------  Button for submitting the form */
 .search-button {
 	background-color: #81b3d2;
 	width: 460px;
@@ -351,62 +469,22 @@ a {
 	color: #94b9d2;
 }
 
-.form-dates,
-.form-traveller {
-	font-size: 14px;
-	line-height: 26px;
-	color: #000000;
-	font-weight: 700;
-}
-.form-dates {
-	width: 458px;
-	margin: 0 auto;
-	position: relative;
-}
-.form-traveller {
-	width: 226px;	
-}
-.form-dates input,
-.form-traveller input {
-	background-color: #f2f2f2;
-	font:inherit;
-	text-transform: uppercase;
-	color: #000000;
-}
-.form-dates input {
-	width: 346px;
-	height: 38px;
-}
-.form-dates input::after {
-	content: "";
-	
-}
-.form-traveller input {
-	width: 114px;
-	height: 38px;
-}
-.form-dates input:hover,
-.form-dates input:focus,
-.form-traveller input:hover,
-.form-traveller input:focus {
-	background-color: #ebebeb;
-}
-.form-dates input:active,
-.form-traveller input:active {
-	background-color: #ffffff;
-	border: 2px solid e5e5e5;
-}
-
-.form-dates label {
-	width: 113px;
-}
 
 
-.form-wrapper {
-	display: flex;
-	margin-bottom: 54px;
-}
-/* Calendar pictogramm in the form */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------  Calendar pictogramm in the form 
 .form-dates img {
 	background-color: #cacaca;
 }
@@ -415,14 +493,14 @@ a {
 	background-color: #000000;
 }
 .form-dates img:active {
-	background-color: #85b5d3;
+	background-color: #85b5d3; */
 }
 
-/* Map */
+/* -----------------------  Map */
 
 
 
-/* Footer */
+/* -----------------------  Footer */
 .main-footer {
 	background-color:rgba(254, 254, 254, 0.9);
 	font-size: 14px;
@@ -505,11 +583,11 @@ a {
 }
 
 
-/* Styles for catalog.html */
+/* -----------------------  Styles for catalog.html */
 
 
 
-/* Styles for the form of catalog.html */
+/* -----------------------  Styles for the form of catalog.html */
 
 .filtering-form {
 	font-size: 14px;
