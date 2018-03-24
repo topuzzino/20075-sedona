@@ -28,6 +28,7 @@ body {
 	width: 1200px;
 	margin: 0 auto;
 }
+
 a {
 	text-decoration: none;
 }
@@ -476,31 +477,13 @@ a {
 
 
 
-
-
-
-
-
-
-
-
-/* -----------------------  Calendar pictogramm in the form 
-.form-dates img {
-	background-color: #cacaca;
-}
-.form-dates img:hover,
-.form-dates img:focus {	
-	background-color: #000000;
-}
-.form-dates img:active {
-	background-color: #85b5d3; */
-}
-
 /* -----------------------  Map */
 
 
 
 /* -----------------------  Footer */
+
+
 .main-footer {
 	background-color:rgba(254, 254, 254, 0.9);
 	font-size: 14px;
