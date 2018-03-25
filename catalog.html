@@ -81,6 +81,8 @@
 								<!-- <input type="range" min="0" max="3500" value="3000"> -->
 							</div>
 							
+							<!-- Если эти дивы поменять на баттоны, то кружок заменяется на эллипс, и я не нашла, в чем трабл. 
+								Я пока оставила, как есть -->
 							<div class="range-toggle range-toggle-min"></div>
 							<div class="range-toggle range-toggle-max"></div>
 						</div>
@@ -111,13 +113,18 @@
 						<ul class="hotel-sort-updown-list">
 							<!-- По возрастанию -->
 							<li class="hotel-sort-updown-item">
-								<a href="#" class="hotel-ascending-order">
-									<svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 0L0 10h11z"/></svg>
+								<a href="#">
+									<svg class="hotel-ascending-order" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+										<path fill="#231F20" d="M5.5 0L0 10h11z"/>
+									</svg>
 								</a>
 							</li>
 							<!-- По убыванию -->
 							<li class="hotel-sort-updown-item">
-								<a href="#" class="hotel-descending-order"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/></svg>
+								<a href="#">
+									<svg class="hotel-descending-order" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+										<path fill="#231F20" d="M5.5 10L0 0h11"/>
+									</svg>
 								</a>
 							</li>
 						</ul>
@@ -141,7 +148,7 @@
 							</div>
 							
 							<div class="hotel-item-raiting">
-								<div class="raiting-stars 4-stars"></div>
+								<div class="raiting-stars stars-4"></div>
 								<span class="raiting">Рейтинг: 8,5</span>
 							</div>
 						</li>
@@ -160,7 +167,7 @@
 							</div>
 							
 							<div class="hotel-item-raiting">
-								<div class="raiting-stars 3-stars"></div>
+								<div class="raiting-stars stars-3"></div>
 								<span class="raiting">Рейтинг: 8,9</span>
 							</div>	
 						</li>
@@ -179,7 +186,7 @@
 							</div>
 							
 							<div class="hotel-item-raiting">
-								<div class="raiting-stars 2-stars"></div>
+								<div class="raiting-stars stars-2"></div>
 								<span class="raiting">Рейтинг: 9,2</span>
 							</div>
 						</li>
