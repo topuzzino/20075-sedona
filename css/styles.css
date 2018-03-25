@@ -1,5 +1,5 @@
 body {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	max-width: 1280px;
 	min-width: 1200px;
@@ -27,6 +27,7 @@ body {
 	background-color: #ffffff;
 	width: 1200px;
 	margin: 0 auto;
+	box-shadow: 0px 5px 15px 0px rgba(0, 0, 1, 0.2); 
 }
 
 a {
@@ -461,7 +462,6 @@ a {
 	height: 38px;
 	margin: 0;
 	padding: 0;
-	background-color: none;
 	color: #a9a9a9;
 	border: none;
 	position: absolute;
@@ -485,8 +485,20 @@ a {
 }
 
 .plus-button {
-	top: 0;
-	right: 0;
+	top: 18px;
+	right: 13px;
+	width: 13px;
+	height: 3px;
+	background-color: #a9a9a9;
+}
+.plus-button::after {
+	content: "";
+	position: absolute;
+	width: 3px;
+	height: 13px;
+	top: -5px;
+	right: 5px;
+	background-color: #a9a9a9;
 }
 
 
@@ -621,35 +633,9 @@ a {
 	font-weight: normal;
 	background-image: url("../img/header-image-hotel.jpg");
 	padding: 30px 73px;
+	min-height: 157px;
 	
 	display: flex;
-	flex-wrap: wrap;
-}
-/* 3 flex-elements of the form */
-.hotel-extras {
-	width: 240px;
-	text-align: left;
-	margin: 0;
-	padding: 0;
-}
-.hotel-type {
-	width: 240px;
-	margin: 0;
-	padding: 0;
-}
-.filter-range {
-	width: 318px;
-	margin: 0;
-	padding: 0;
-	margin-left: auto;
-}
-
-.hotel-extras legend,
-.hotel-type legend {
-	margin-bottom: 9px;
-	font-size: 16px;
-	line-height: 21px;
-	font-weight: bold;
 }
 
 .filtering-form ul {
@@ -662,8 +648,93 @@ a {
 	border: none;
 }
 
+/* 3 flex-elements of the form */
+.hotel-extras {
+	width: 240px;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+.hotel-types {
+	width: 240px;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+.filter-range {
+	width: 318px;
+	margin: 0;
+	padding: 0;
+	margin-left: auto;
+}
+
+.hotel-extras legend,
+.hotel-types legend {
+	margin-bottom: 28px;
+	font-size: 16px;
+	line-height: 21px;
+	font-weight: bold;
+}
+
+.filtering-extras,
+.filtering-types {
+	margin-bottom: 30px;
+}
+
+.filtering-extras:last-child,
+.filtering-types:last-child {
+	margin-bottom: 0;
+}
+
+/* Styles for the checkboxes, inputs're made invisible  */
+
+.hotel-extras input[type="checkbox"],
+.hotel-types input[type="checkbox"] {
+	display: none;
+}
+
+.hotel-extras input[type="checkbox"] + label,
+.hotel-types input[type="checkbox"] + label {
+	position: relative;
+	cursor: pointer;
+	padding-left: 40px;
+}
+
+.filtering-extras input:not(:checked) + label:before,
+.filtering-types input:not(:checked) + label:before {
+	content: "";
+	position: absolute;
+	
+	width: 23px;
+	height: 23px;
+	
+	top: -6px;
+	left: 0;
+	
+	background-image: url("../img/checkbox-off.svg");
+	background-repeat: no-repeat;
+}
+
+.filtering-extras input:checked + label:before,
+.filtering-types input:checked + label:before {
+	content: "";
+	position: absolute;
+	
+	width: 27px;
+	height: 23px;
+	
+	top: -6px;
+	left: 0;
+	
+	background-image: url("../img/checkbox-on.svg");
+	background-repeat: no-repeat;
+}
 
 
+
+/* Styles for the price form (third flex-element)  */
 .hotel-price {
 	margin: 0;
 	padding: 0;
@@ -891,7 +962,6 @@ a {
 }
 .hotel-item-title a {
 	color: #000000;
-	
 	margin-bottom: 10px;
 }
 .hotel-type {
@@ -956,12 +1026,15 @@ a {
 	background-color: red;
 	background: url("../img/star.svg") repeat-x;	
 }
-.4-stars {
+
+/* .4-stars {
 	width: 90px;
 }
+
 .3-stars {
 	width: 65px;
 }
+
 .2-stars {
 	width: 42px;
-}
+} */
