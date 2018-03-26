@@ -19,6 +19,8 @@ body {
 	padding: 0;
 	border: 0;
 	margin: 0;
+	font-size: 0;
+	line-height: 0;
 }
 
 /* Container for everything */
@@ -49,7 +51,7 @@ a {
 /* Header */
 
 .main-header {
-	height: 56px;
+	min-height: 56px;
 }
 
 .main-nav {
@@ -59,34 +61,50 @@ a {
 	text-transform: uppercase;
 	color: #000000;
 	background-color: #ffffff;
+	list-style: none;
 	
 	position: relative; /* centers the logo */
 }
-.main-nav,
-.main-nav-list {
-	list-style: none;
-}
+
 .main-nav a,
 .main-nav-list a {
 	color: #000000;
 }
 
+
 /* ul becomes flex container */
+
 .main-nav-list {
-	width: 100%;
+	width: 1056px;
 	list-style: none;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	display: flex;
 	justify-content: space-between;
 	background-color: #ffffff;
 }
+
 .main-nav-item {
-	width: 20%;
 	height: 26px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	text-align: center;
+	padding: 15px 0;
+}
+
+.main-nav-item:first-child {
+	text-align: left;
+	width: 240px;
+}
+.main-nav-item:nth-child(2) {
+	text-align: left;
+	width: 240px;
+	margin-right: auto;
+}
+.main-nav-item:nth-child(3) {
+	text-align: right;
+	width: 240px;
+}
+.main-nav-item:last-child {
+	text-align: right;
+	width: 240px;
 }
 
 /* Logo is centered */
@@ -121,7 +139,7 @@ a {
 	background-image: url("../img/header-image-indexa.jpg");
 	background-repeat: no-repeat;
 	width: 100%;
-	height: 564px;
+	height: 508px;
 	background-color: #e4f1f9;
 }
 
