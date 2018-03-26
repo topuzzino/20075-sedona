@@ -558,13 +558,17 @@ a {
 	min-height: 48px;
 	padding: 36px 0;
 	
-	position: relative; /* чтоб футер находил на карту */
-	margin-top: -120px;
-	
 	display: flex;
 	justify-content: space-between;
 	text-align: center;
 }
+
+/* Separate class for the footer on index.html - for overlapping on the map */
+.footer-overlap {
+	position: relative;
+	margin-top: -120px;
+}
+
 .footer-info,
 .footer-social,
 .footer-author {
@@ -653,7 +657,9 @@ a {
 	text-transform: uppercase;
 	font-weight: normal;
 	background-image: url("../img/header-image-hotel.jpg");
-	padding: 30px 73px;
+	background-repeat: no-repeat;
+	background-color: #81b3d2;
+	padding: 30px 72px;
 	min-height: 157px;
 	
 	display: flex;
@@ -671,7 +677,7 @@ a {
 
 /* 3 flex-elements of the form */
 .hotel-extras {
-	width: 240px;
+	width: 255px;
 	text-align: left;
 	margin: 0;
 	padding: 0;
@@ -693,7 +699,7 @@ a {
 
 .hotel-extras legend,
 .hotel-types legend {
-	margin-bottom: 28px;
+	margin-bottom: 24px;
 	font-size: 16px;
 	line-height: 21px;
 	font-weight: bold;
@@ -701,7 +707,7 @@ a {
 
 .filtering-extras,
 .filtering-types {
-	margin-bottom: 30px;
+	margin-bottom: 24px;
 }
 
 .filtering-extras:last-child,
@@ -762,7 +768,7 @@ a {
 	
 }
 .filter-range-title {
-	margin-bottom: 9px;
+	margin-bottom: 8px;
 	font-size: 16px;
 	line-height: 21px;
 	font-weight: bold;
@@ -770,7 +776,7 @@ a {
 
 .price-controls {
 	border: 2px solid #ffffff;
-	height: 36px;
+	height: 32px;
 	margin-bottom: 20px;
 	border-radius: 2px;
 	
@@ -795,7 +801,7 @@ a {
 	display: inline-block;
 	
 	font-size: 14px;
-	line-height: 38px;
+	line-height: 34px;
 	vertical-align: top;
 	
 	cursor: pointer;
@@ -821,7 +827,7 @@ a {
 
 .range-controls {
 	position: relative;
-	margin-bottom: 32px;
+	margin-bottom: 16px;
 }
 
 .range-controls .scale {
@@ -863,14 +869,16 @@ a {
 }
 
 .filtering-button {
-	font: inherit;
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
 	background-color: transparent;
 	border: 2px solid #ffffff;
 	border-radius: 2px;
 	cursor: pointer;
 	
 	display: block;
-	padding: 6px 35px;
+	padding: 5px 35px;
 	margin: 0 auto;
 }
 
@@ -887,7 +895,7 @@ a {
 
 .hotel-results-info {
 	display: flex;
-	padding: 32px 73px;
+	padding: 30px 73px;
 	min-height: 22px;
 	border-bottom: 1px solid #e5e5e5;
 }
@@ -899,7 +907,7 @@ a {
 	font-weight: bold;
 	
 	width: 135px;
-	margin-right: 32px;
+	margin-right: 28px;
 }
 
 .hotels-founded p {
@@ -915,6 +923,7 @@ a {
 	font-weight: normal;
 	
 	margin-right: 38px;
+	padding-top: 7px;
 	display: flex;
 	width: 364px;
 }
@@ -1010,6 +1019,7 @@ a {
 .hotel-item-title {
 	padding: 0;
 	margin: 0;
+	margin-bottom: 4px;
 	font-size: 21px;
 	line-height: 26px;
 	font-weight: bold;
@@ -1024,8 +1034,8 @@ a {
 	font-size: 14px;
 	line-height: 21px;
 	width: 110px;
-	margin-right: 6px;
-	margin-bottom: 10px;
+	margin-right: 5px;
+	margin-bottom: 12px;
 	
 	display: inline-block;
 }
@@ -1044,7 +1054,8 @@ a {
 	color: #ffffff;
 	width: 110px;
 	text-align: center;
-	padding: 6px 0;
+	padding-top: 5px;
+	margin-bottom: 15px;
 }
 
 .hotel-item-link-book {
@@ -1052,7 +1063,8 @@ a {
 	color: #ffffff;
 	width: 142px;
 	text-align: center;
-	padding: 6px 0;
+	padding-top: 5px;
+	margin-bottom: 15px;
 }
 
 
