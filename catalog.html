@@ -36,15 +36,15 @@
 					<ul>
 						<li class="filtering-extras">
 							<input type="checkbox" name="infrastructure" id="pool" value="pool" checked>
-							<label for="pool">Бассейн</label>
+							<label for="pool" tabindex="1">Бассейн</label>
 						</li>
 						<li class="filtering-extras">
 							<input type="checkbox" name="infrastructure" id="parking" value="parking">
-							<label for="parking">Парковка</label>
+							<label for="parking" tabindex="2">Парковка</label>
 						</li>
 						<li class="filtering-extras">
 							<input type="checkbox" name="infrastructure" id="wi-fi" value="wi-fi">
-							<label for="wi-fi">Wi-Fi</label>
+							<label for="wi-fi" tabindex="3">Wi-Fi</label>
 						</li>
 					</ul>
 				</fieldset>
@@ -54,15 +54,15 @@
 					<ul>
 						<li class="filtering-types">
 							<input type="checkbox" name="hotel-type" id="hotel" value="hotel" checked>
-							<label for="hotel">Гостиница</label>
+							<label for="hotel" tabindex="4">Гостиница</label>
 						</li>
 						<li class="filtering-types">
 							<input type="checkbox" name="hotel-type" id="motel" value="motel" checked>
-							<label for="motel">Мотель</label>
+							<label for="motel" tabindex="5">Мотель</label>
 						</li>
 						<li class="filtering-types">
 							<input type="checkbox" name="hotel-type" id="appartement" value="appartement" checked>
-							<label for="appartement">Апартаменты</label>
+							<label for="appartement" tabindex="6">Апартаменты</label>
 						</li>
 					</ul>
 				</fieldset>
@@ -71,8 +71,8 @@
 					<fieldset class="hotel-price">
 						<legend class="filter-range-title">Стоимость в сутки (Р):</legend>
 						<div class="price-controls">
-							<label class="min-price">От <input type="text" name="min-price" value="0"></label>
-							<label class="max-price">До <input type="text" name="max-price" value="3000"></label>
+							<label class="min-price">От <input type="text" name="min-price" value="0" tabindex="7"></label>
+							<label class="max-price">До <input type="text" name="max-price" value="3000" tabindex="8"></label>
 						</div>
 						<div class="range-controls">
 							<div class="scale">
@@ -85,7 +85,7 @@
 							<div class="range-toggle range-toggle-max"></div>
 						</div>
 					</fieldset>
-					<button type="submit" class="button filtering-button">Показать</button>
+					<button type="submit" class="button filtering-button" tabindex="9">Показать</button>
 				</div>
 			</form>
 			
