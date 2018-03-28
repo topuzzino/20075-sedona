@@ -14,13 +14,17 @@ body {
 }
 
 .visually-hidden {
-	visibility: hidden;
 	position: absolute;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	
 	padding: 0;
 	border: 0;
 	margin: 0;
-	font-size: 0;
-	line-height: 0;
 }
 
 /* Container for everything */
@@ -120,12 +124,16 @@ a {
 .main-nav-list a:hover,
 .main-nav-list a:focus {
 	color: #81b3d2;
+	outline: none;
 }
 .main-nav a:active,
 .main-nav-list a:active {
 	color: #cacaca;
 }
 
+.current a {
+	color: #766357;
+}
 
 /* Styles for main */
 .container {
@@ -343,11 +351,46 @@ a {
 }
 .popup-button:hover,
 .popup-button:focus {
-	background-color: #604e43;	
+	background-color: #604e43;
+	outline: none;
 }
 .popup-button:active {
 	background-color: #503e33;
 	color: #8f8681;	
+	outline: none;
+}
+
+/* класс, который будет отвечать за скрывание модального окна */
+.popup-hide {
+	display: none;
+}
+
+
+/* анимация окна формы */
+@keyframes bounce {
+  0% { transform: translateY(-100%); }
+  12% { transform: translateY(-88%) }
+  25% { transform: translateY(-75%) }
+  37% { transform: translateY(-63%) }
+  50% { transform: translateY(-50%) }
+  62% { transform: translateY(-38%) }
+  75% { transform: translateY(-25%); }
+  87% { transform: translateY(-12%) }
+  90% { transform: translateY(-10%); }
+  100% { transform: translateY(0%); }
+}
+
+
+.popup-error {
+	animation-name: shake;
+	animation-duration: 0.6s;
+}
+
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
 }
 
 
@@ -358,6 +401,12 @@ a {
 	background-color: #ffffff;
 	box-sizing: border-box;
 	width: 568px;
+	
+	/* Анимация не очень элегантно приезжает с самого верха браузера,
+		а не из кнопки "Поиск гостиниц в Седоне" */
+	animation-name: bounce;
+	animation-duration: 0.2s;
+	
 }
 
 .form-dates label,
@@ -394,26 +443,24 @@ a {
 	outline: none;
 }
 
-.form-dates .calendar-button {
-	color: #000000;
-	opacity: 0.3;
-	background-color: #ffffff;
+.calendar-pictogramm path {
+	fill: #cacaca;
 	border: none;
-}
-.form-dates .calendar-button:hover {
-	color: #000000;
-}
-
-.form-dates .calendar-button:focus {
-	color: #81b3d2;
-	border: none;
-}
-
-.calendar-button {
-	background-color: #f2f2f2;
 	width: 21px;
 	height: 22px;
 }
+
+.calendar-pictogramm:hover path,
+.calendar-pictogramm:focus path {
+	fill: #000000;
+	outline: none;
+}
+
+.calendar-pictogramm:active path {
+	fill: #81b3d2;
+	outline: none;
+} 
+
 
 .form-dates {
 	width: 460px;
@@ -451,71 +498,87 @@ a {
 	justify-content: space-between;
 }
 
-.form-traveller {
+.form-traveller  {
 	width: 227px;
 	display: flex;
-	justify-content: space-between;
-	position: relative;
+	align-items: center;
 }
 
 .form-traveller label {
-	width: 113px;
-	display: block;
+	width: 100px;
+	margin-right: 10px;
 }
 
 .form-traveller input {
-	width: 99px;
-	height: 32px;
+	box-sizing: border-box;
+	width: 38px;
+	height: 38px;
 	text-align: center;
-}
-.children label {
-	padding-left: 50px;
+	padding: 0;
 }
 
-/* Временное решение, не знаю, как сделать минусы-плюсы */
+.children {
+	width: 200px;
+	justify-content: flex-end;
+}
+
+.children label {
+	width: 65px;
+}
+
 .number-button {
 	width: 38px;
 	height: 38px;
 	margin: 0;
 	padding: 0;
-	color: #a9a9a9;
+	font-size: 0;
+	background-color: #f2f2f2;
 	border: none;
-	position: absolute;
+	display: inline-block;
 	vertical-align: middle;
 	cursor: pointer;
+	position: relative;
 }
-.number-button:hover,
-.number-button:focus {
-	color: #000000;
-}
-.number-button:active {
-	color: #81b3d2;
-}
-
-.minus-button {
-	top: 18px;
-	left: 123px;
+.number-button:before {
+	content: "";
+	position: absolute;
 	width: 12px;
 	height: 3px;
+	top: 18px;
+	left: 13px;
 	background-color: #a9a9a9;
 }
 
-.plus-button {
-	top: 18px;
-	right: 13px;
-	width: 13px;
-	height: 3px;
-	background-color: #a9a9a9;
-}
-.plus-button::after {
+.form-traveller .number-button:nth-of-type(2):after {
 	content: "";
 	position: absolute;
 	width: 3px;
-	height: 13px;
-	top: -5px;
-	right: 5px;
+	height: 11px;
 	background-color: #a9a9a9;
+	top: 14px;
+	right: 18px;
 }
+
+.number-button:hover:before,
+.number-button:focus:before {
+	background-color: #000000;
+	outline: none;
+}
+.number-button:active:before {
+	background-color: #81b3d2;
+	outline: none;
+}
+.form-traveller .number-button:nth-of-type(2):hover:after,
+.form-traveller .number-button:nth-of-type(2):focus:after {
+	background-color: #000000;
+	outline: none;
+}
+.form-traveller .number-button:nth-of-type(2):active:after {
+	background-color: #81b3d2;
+	outline: none;
+}
+
+
 
 
 /* -----------------------  Button for submitting the form */
@@ -528,6 +591,7 @@ a {
 .search-button:hover,
 .search-button:focus {
 	background-color: #669ec0;
+	outline: none;
 }
 .search-button:active {
 	background-color: #5496bd;
@@ -540,9 +604,8 @@ a {
 .search-map {
 	width: 100%;
 	height: 593px;
-}
-
-.search-map img {
+	background-image: url("../img/map.jpg");
+	background-repeat: no-repeat; 
 }
 
 /* -----------------------  Footer */
@@ -611,6 +674,7 @@ a {
 .social-link:hover,
 .social-link:focus {
 	background-color: #669ec0;
+	outline: none;
 }
 .social-link:active {
 	background-color: #5496bd;
@@ -638,6 +702,7 @@ a {
 .footer-author a:hover path,
 .footer-author a:focus path {
 	fill: #81b3d2;
+	outline: none;
 }
 .footer-author a:active path {
 	fill: #bdbbbc;
@@ -715,6 +780,7 @@ a {
 	margin-bottom: 0;
 }
 
+
 /* Styles for the checkboxes, inputs're made invisible  */
 
 .hotel-extras input[type="checkbox"],
@@ -759,7 +825,15 @@ a {
 	background-repeat: no-repeat;
 }
 
+.filtering-extras input:checked:disabled + label:before: {
+	background-image: url("../img/checkbox-on-disabled.svg");
+	background-repeat: no-repeat;
+}
 
+.filtering-extras input:not(:checked):disabled + label:before: {
+	background-image: url("../img/checkbox-off-disabled.svg");
+	background-repeat: no-repeat;
+}
 
 /* Styles for the price form (third flex-element)  */
 .hotel-price {
@@ -865,7 +939,7 @@ a {
 }
 
 .range-toggle:hover {
-	background: #1c4f80;
+	background: #ababab;
 }
 
 .filtering-button {
@@ -952,8 +1026,14 @@ a {
 .hotel-sort-link:hover,
 .hotel-sort-link:focus {
 	color: #81b3d2;
+	outline: none;
 }
-.hotel-sort-link.active {
+.hotel-sort-link:active {
+	color: #000000;
+	text-decoration: none;
+}
+
+.hotel-sort-link.sort-active {
 	color: #81b3d2;
 	text-decoration: none;
 }
@@ -980,17 +1060,27 @@ a {
 	justify-content: space-between;
 }
 
-.hotel-ascending-order path {
+.hotel-ascending-order path,
+.hotel-descending-order path {
 	fill: #cacaca;
 }
 
-.hotel-descending-order path {
+.hotel-ascending-order:hover path,
+.hotel-descending-order:hover path,
+.hotel-ascending-order:focus path,
+.hotel-descending-order:focus path {
+	fill: #000000;
+	outline: none;
+}
+
+.hotel-ascending-order:active path,
+.hotel-descending-order:active path {
 	fill: #81b3d2;
 }
 
-
-
-
+.active-arrow path {
+	fill: #81b3d2;
+}
 
 /* Hotel list */
 .hotel-list {
@@ -998,6 +1088,7 @@ a {
 	margin: 0;
 	padding: 0;
 }
+
 .hotel-item {
 	display: flex;
 	border-bottom: 1px solid #e5e5e5;
@@ -1005,13 +1096,13 @@ a {
 	padding-top: 30px;
 }
 
-
 .hotel-pic {
 	width: 135px;
 	margin-right: 30px;
 	margin-left: 73px;
 	min-height: 90px;
 }
+
 .hotel-info {
 	text-align: left;
 }
@@ -1026,10 +1117,20 @@ a {
 	text-transform: uppercase;
 	color: #000000;
 }
+
 .hotel-item-title a {
 	color: #000000;
 	margin-bottom: 10px;
 }
+
+.hotel-item-title a:hover {
+	color: #81b3d2;
+}
+
+.hotel-item-title a:active {
+	color: #cacaca;
+}
+
 .hotel-type {
 	font-size: 14px;
 	line-height: 21px;
@@ -1058,6 +1159,17 @@ a {
 	margin-bottom: 15px;
 }
 
+.hotel-item-link-more:hover,
+.hotel-item-link-more:focus {
+	background-color: #669ec0;
+	outline: none;
+}
+
+.hotel-item-link-more:active {
+	background-color: #5496bd;
+	color: #94b9d2;
+}
+
 .hotel-item-link-book {
 	background-color: #766357;
 	color: #ffffff;
@@ -1067,6 +1179,15 @@ a {
 	margin-bottom: 15px;
 }
 
+.hotel-item-link-book:hover,
+.hotel-item-link-book:focus {
+	background-color: #604e43;
+	outline: none;
+}
+.hotel-item-link-book:active {
+	background-color: #503e33;
+	color: #928a85;
+}
 
 .hotel-item-raiting {
 	display: flex;

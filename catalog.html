@@ -14,14 +14,14 @@
 		<!-- Header -->
 	  	<header class="main-header">
 		  	<nav class="main-nav">
-			  	<a class="main-header-logo">
+			  	<a class="main-header-logo" href="index.html">
 				  	<img src="img/logo.png" width="137" height="70" alt="Logo of Sedona">
 				</a>
 			  	<ul class="main-nav-list">
 				  	<li class="main-nav-item"><a href="info.html">Информация</a></li>
 				  	<li class="main-nav-item"><a href="photo.html">Фото и видео</a></li>
 				  	<li class="main-nav-item"><a href="map.html">Карта штата</a></li>
-				  	<li class="main-nav-item"><a href="catalog.html">Гостиницы</a></li>
+				  	<li class="main-nav-item current"><a href="catalog.html">Гостиницы</a></li>
 		  		</ul>
 		  	</nav>
 		</header>
@@ -77,7 +77,6 @@
 						<div class="range-controls">
 							<div class="scale">
 								<div class="bar"></div>
-								<!-- <input type="range" min="0" max="3500" value="3000"> -->
 							</div>
 							
 							<!-- Если эти дивы поменять на баттоны, то кружок заменяется на эллипс, и я не нашла, в чем трабл. 
@@ -103,7 +102,7 @@
 					<div class="hotel-sort">
 						<span class="hotel-sort-title">Сортировка</span>
 						<ul class="hotel-sort-list">
-							<li class="hotel-sort-item"><a href="#" class="hotel-sort-link active">По цене</a></li>
+							<li class="hotel-sort-item"><a href="#" class="hotel-sort-link sort-active">По цене</a></li>
 							<li class="hotel-sort-item"><a href="#" class="hotel-sort-link">По типу</a></li>
 							<li class="hotel-sort-item"><a href="#" class="hotel-sort-link">По рейтингу</a></li>
 						</ul>
@@ -121,7 +120,7 @@
 							<!-- По убыванию -->
 							<li class="hotel-sort-updown-item">
 								<a href="#">
-									<svg class="hotel-descending-order" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+									<svg class="hotel-descending-order active-arrow" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
 										<path fill="#231F20" d="M5.5 10L0 0h11"/>
 									</svg>
 								</a>
