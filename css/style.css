@@ -33,7 +33,8 @@ body {
 	background-color: #ffffff;
 	width: 1200px;
 	margin: 0 auto;
-	box-shadow: 0px 5px 15px 0px rgba(0, 0, 1, 0.2); 
+	-webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 1, 0.2);
+	        box-shadow: 0px 5px 15px 0px rgba(0, 0, 1, 0.2); 
 }
 
 a {
@@ -83,8 +84,12 @@ a {
 	list-style: none;
 	margin: 0 auto;
 	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	background-color: #ffffff;
 }
 
@@ -115,7 +120,9 @@ a {
 .main-header-logo {
 	position: absolute;
 	left: 50%;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
 }
 
 /* Navigation links */
@@ -180,6 +187,10 @@ a {
 	width: 1200px;
 	background-color: #81b3d2;
 	
+	display: -webkit-box;
+	
+	display: -ms-flexbox;
+	
 	display: flex;
 	text-align: center;
 }
@@ -218,6 +229,8 @@ a {
 /* Styles for features */
 
 .features-list {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	text-align: center;
 	padding: 0;
@@ -243,7 +256,9 @@ a {
 	position: absolute;
 	top: -2px;
 	left: 50%;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
 	
 	width: 75px;
 	height: 72px;
@@ -281,6 +296,8 @@ a {
 .other-reasons-list {
 	padding: 0;
 	margin: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 .other-reasons-item {
@@ -361,38 +378,62 @@ a {
 /* класс, который будет отвечать за скрывание модального окна */
 .popup-hide {
 	display: none;
+	-webkit-animation-name: disappearance;
+	        animation-name: disappearance;
+	-webkit-animation-duration: 1.5s;
+	        animation-duration: 1.5s;
 }
 
 .popup-show {
 	display: block;
+	-webkit-animation-name: appearance;
+	        animation-name: appearance;
+	-webkit-animation-duration: 1.5s;
+	        animation-duration: 1.5s;
+}
+
+.popup-error {
+	-webkit-animation-name: shake;
+	        animation-name: shake;
+	-webkit-animation-duration: 0.6s;
+	        animation-duration: 0.6s;
+}
+
+/* анимация окна формы */
+@-webkit-keyframes appearance {
+	from { opacity: 0;}
+	to { opacity: 100%; }
+}
+@keyframes appearance {
+	from { opacity: 0;}
+	to { opacity: 100%; }
+}
+
+@-webkit-keyframes disappearance {
+	from { opacity: 100%;}
+	to { opacity: 0; }
+}
+
+@keyframes disappearance {
+	from { opacity: 100%;}
+	to { opacity: 0; }
 }
 
 
-/* анимация окна формы */
-@keyframes bounce {
-  0% { transform: translateY(-100%); }
-  12% { transform: translateY(-88%) }
-  25% { transform: translateY(-75%) }
-  37% { transform: translateY(-63%) }
-  50% { transform: translateY(-50%) }
-  62% { transform: translateY(-38%) }
-  75% { transform: translateY(-25%); }
-  87% { transform: translateY(-12%) }
-  90% { transform: translateY(-10%); }
-  100% { transform: translateY(0%); }
+@-webkit-keyframes shake {
+  0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { -webkit-transform: translateX(10px); transform: translateX(10px); }
 }
 
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-  20%, 40%, 60%, 80% { transform: translateX(10px); }
+  0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { -webkit-transform: translateX(10px); transform: translateX(10px); }
 }
 
-.popup-error {
-	animation-name: shake;
-	animation-duration: 0.6s;
-}
+
 
 
 
@@ -401,12 +442,11 @@ a {
 	padding: 55px 56px;
 	position: absolute;
 	background-color: #ffffff;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	width: 568px;
 		
-	animation-name: bounce;
-	animation-duration: 0.2s;
-	
+		
 }
 
 .form-dates label,
@@ -416,7 +456,9 @@ a {
 	font-weight: 700;
 	line-height: 26px;
 	text-transform: uppercase;
-	align-self: center;
+	-ms-flex-item-align: center;
+	    -ms-grid-row-align: center;
+	    align-self: center;
 }
 
 .form-dates input,
@@ -464,8 +506,12 @@ a {
 	margin: 0 auto;
 	position: relative;
 	margin-bottom: 29px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .form-dates input {
@@ -489,16 +535,24 @@ a {
 
 
 .form-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	margin-bottom: 54px;
 	width: 460px;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .form-traveller  {
 	width: 227px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 .form-traveller label {
@@ -507,7 +561,8 @@ a {
 }
 
 .form-traveller input {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	width: 38px;
 	height: 38px;
 	text-align: center;
@@ -516,7 +571,9 @@ a {
 
 .children {
 	width: 200px;
-	justify-content: flex-end;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
 }
 
 .children label {
@@ -618,8 +675,14 @@ iframe {
 	min-height: 48px;
 	padding: 36px 0;
 	
+	display: -webkit-box;
+	
+	display: -ms-flexbox;
+	
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	text-align: center;
 }
 
@@ -653,15 +716,25 @@ iframe {
 	background-color: #81b3d2;
 	width: 46px;
 	height: 48px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: center; 
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center; 
 }
 
 .social-media {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 150px;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -679,9 +752,15 @@ iframe {
 }
 
 .footer-author {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 .footer-author-text {
 	margin: 0;
@@ -719,6 +798,10 @@ iframe {
 	background-color: #81b3d2;
 	padding: 30px 72px;
 	min-height: 157px;
+	
+	display: -webkit-box;
+	
+	display: -ms-flexbox;
 	
 	display: flex;
 }
@@ -856,7 +939,9 @@ iframe {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	
 	width: 2px;
 	height: 22px;
@@ -922,7 +1007,8 @@ iframe {
 	background: #ababab;
 	border: 8px solid #ffffff;
 	border-radius: 50%;
-	box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+	-webkit-box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+	        box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
 	cursor: pointer;
 	
 	position: absolute;
@@ -966,6 +1052,8 @@ iframe {
 
 
 .hotel-results-info {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	padding: 30px 73px;
 	min-height: 22px;
@@ -996,6 +1084,8 @@ iframe {
 	
 	margin-right: 38px;
 	padding-top: 7px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 364px;
 }
@@ -1010,16 +1100,24 @@ iframe {
 	margin: 0;
 	padding: 0;
 	
+	display: -webkit-box;
+	
+	display: -ms-flexbox;
+	
 	display: flex;
 	width: 240px;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .hotel-sort-link {
 	color: #cacaca;
 	text-decoration: underline;
-	text-decoration-style: dotted;
-	text-decoration-color: #81b3d2;
+	-webkit-text-decoration-style: dotted;
+	        text-decoration-style: dotted;
+	-webkit-text-decoration-color: #81b3d2;
+	        text-decoration-color: #81b3d2;
 }
 .hotel-sort-link:hover,
 .hotel-sort-link:focus {
@@ -1042,6 +1140,10 @@ iframe {
 	margin: 0;
 	padding: 0;
 	
+	display: -webkit-box;
+	
+	display: -ms-flexbox;
+	
 	display: flex;
 	margin-left: auto;
 	width: 36px;
@@ -1052,9 +1154,15 @@ iframe {
 	margin: 0;
 	padding: 0;
 	
+	display: -webkit-box;
+	
+	display: -ms-flexbox;
+	
 	display: flex;
 	width: 36px;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .hotel-ascending-order path,
@@ -1086,6 +1194,8 @@ iframe {
 }
 
 .hotel-item {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	border-bottom: 1px solid #e5e5e5;
 	min-height: 120px;
@@ -1148,9 +1258,13 @@ iframe {
 }
 
 .hotel-item-links {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 258px;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .hotel-item-link-more {
@@ -1197,10 +1311,19 @@ iframe {
 }
 
 .hotel-item-raiting {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: flex-end;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: end;
+	    -ms-flex-align: end;
+	        align-items: flex-end;
 	
 	height: 90px;
 	margin-left: auto;
