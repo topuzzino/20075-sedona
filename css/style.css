@@ -901,12 +901,14 @@ iframe {
 	background-repeat: no-repeat;
 }
 
-.filtering-extras input:checked:disabled + label::before {
+.filtering-extras input:checked:disabled + label::before,
+.filtering-types input:checked:disabled + label::before {
 	background-image: url("../img/checkbox-on-disabled.svg");
 	background-repeat: no-repeat;
 }
 
-.filtering-extras input:disabled + label::before {
+.filtering-extras input:disabled + label::before,
+.filtering-types input:disabled + label::before {
 	background-image: url("../img/checkbox-off-disabled.svg");
 	background-repeat: no-repeat;
 }
