@@ -21,6 +21,7 @@ form.addEventListener("submit", function (evt) {
 	
 	popup.classList.remove("popup-error");
 	if (!checkIn.value || !checkOut.value || !adults.value) {
+		evt.preventDefault();
 		popup.classList.add("popup-error");
 	} 
 });

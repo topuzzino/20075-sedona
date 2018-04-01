@@ -871,8 +871,8 @@ iframe {
 	padding-left: 40px;
 }
 
-.filtering-extras input:not(:checked) + label::before,
-.filtering-types input:not(:checked) + label::before {
+.filtering-extras input + label::before,
+.filtering-types input + label::before {
 	content: "";
 	position: absolute;
 	
@@ -906,7 +906,7 @@ iframe {
 	background-repeat: no-repeat;
 }
 
-.filtering-extras input:not(:checked):disabled + label::before {
+.filtering-extras input:disabled + label::before {
 	background-image: url("../img/checkbox-off-disabled.svg");
 	background-repeat: no-repeat;
 }
