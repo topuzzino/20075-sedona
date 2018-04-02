@@ -197,13 +197,13 @@ a {
 .reason-info {
 	width: 400px;
 	text-align: center;
-	height: 208px;    /* 256-48 */
+	min-height: 208px;    /* 256-48 */
 	padding-top: 48px;
 	background-color: #81b3d2;
 	color: #ffffff;
 }
 .reason-info h3 {
-	width: 300px;
+	width: 200px;
 	margin: 0 auto;
 	margin-bottom: 23px;
 	
@@ -217,8 +217,9 @@ a {
 	margin-bottom: 21px;
 }
 .reason-text {
-	/* width: 307px; */
+	width: 307px;
 	margin: 0 auto;
+	margin-bottom: 25px;
 }
 .reason-pic {
 	width: 800px;
@@ -228,10 +229,16 @@ a {
 
 /* Styles for features */
 
+.features {
+	min-height: 330px;
+	background-color: #ffffff;
+}
+
 .features-list {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	flex-wrap: wrap;
 	text-align: center;
 	padding: 0;
 	margin: 0;
@@ -278,7 +285,7 @@ a {
 .features-text {
 	width: 295px;
 	margin: 0 auto;
-	margin-bottom: 80px;
+	margin-bottom: 25px;
 }
 
 /* Section for other reasons (Nr. 3–5) */
@@ -291,6 +298,7 @@ a {
 .other-reasons {
 	background-color: #eeeeee;
 	padding-top: 48px;
+	min-height: 208px;
 }
 
 .other-reasons-list {
@@ -299,6 +307,7 @@ a {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	flex-wrap: wrap;
 }
 .other-reasons-item {
 	width: 400px;
@@ -322,7 +331,7 @@ a {
 .other-reasons-text {
 	width: 270px;
 	margin: 0 auto;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 }
 
 
@@ -796,13 +805,13 @@ iframe {
 	background-image: url("../img/header-image-hotel.jpg");
 	background-repeat: no-repeat;
 	background-color: #81b3d2;
-	padding: 30px 72px;
-	min-height: 157px;
+	padding-top: 30px;
+	padding-left: 72px;
+	padding-right: 72px;
+	min-height: 187px;
 	
 	display: -webkit-box;
-	
 	display: -ms-flexbox;
-	
 	display: flex;
 }
 
@@ -851,10 +860,10 @@ iframe {
 	margin-bottom: 24px;
 }
 
-.filtering-extras:last-child,
+/*.filtering-extras:last-child,
 .filtering-types:last-child {
 	margin-bottom: 0;
-}
+} */
 
 
 /* Styles for the checkboxes, inputs're made invisible  */
@@ -1204,8 +1213,7 @@ iframe {
 	display: -ms-flexbox;
 	display: flex;
 	border-bottom: 1px solid #e5e5e5;
-	min-height: 120px;
-	padding-bottom: 30px;
+	min-height: 150px;
 }
 
 .hotel-pic {
@@ -1223,6 +1231,7 @@ iframe {
 
 .hotel-info-wrapper {
 	padding-top: 28px;
+	margin-bottom: 30px;
 }
 
 .hotel-item-title {
