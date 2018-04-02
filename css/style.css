@@ -1017,6 +1017,10 @@ iframe {
 	top: -9px;
 }
 
+.range-toggle:hover {
+	transform: scale(1.25);
+}
+
 .range-toggle-min {
 	left: 0;
 }
